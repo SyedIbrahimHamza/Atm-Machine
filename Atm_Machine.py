@@ -1,12 +1,12 @@
 correct_pin = "9876"
-balance = 10000
+balance = 0
 attempts = 3
 
 print("Welcome to the ATM Machine!")
 print("Please enter your PIN to continue:")
 
 while attempts > 0:
-    pin = input()
+    pin = input("Enter your PIN: ")
     
     if pin == correct_pin:
         break
@@ -26,14 +26,15 @@ while True:
     print("\nPlease select an option:")
     print("1. Check Balance")
     print("2. Withdraw Money")
-    print("3. Exit")
+    print("3. Deposit Money")
+    print("4. Exit")
     
-    option = input()
+    option = input("Enter your choice (1-4): ")
     
     
-    while option not in ["1", "2", "3"]:
+    while option not in ["1", "2", "3", "4"]:
         print("Invalid option. Please select a valid option:")
-        option = input()
+        option = input("Enter your choice (1-4): ")
     
     
     if option == "1":
@@ -48,5 +49,10 @@ while True:
             print("Withdrawal successful! New balance:", balance)
     
     elif option == "3":
+        amount = int(input("Enter amount to deposit: "))
+        balance += amount
+        print("Deposit successful! New balance:", balance)
+    
+    elif option == "4":
         print("Thank you for using our ATM. Goodbye!")
         break

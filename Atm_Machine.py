@@ -54,6 +54,10 @@ while True:
                 print("Must be greater than zero!")
                 continue
     
+            if amount > balance:
+                print("Insufficient funds!")
+                continue  
+    
             break  
         balance -= amount
         print("Withdrawal successful! Your new balance is:", balance)

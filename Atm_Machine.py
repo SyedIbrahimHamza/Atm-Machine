@@ -75,10 +75,7 @@ while True:
             if amount <= 0:
                 print("Must be greater than zero!")
                 continue
-    
-            if amount > balance:
-                print("Insufficient funds!")
-                continue 
+     
             break
         balance += amount
         print("Deposit successful! Your new balance is:", balance)

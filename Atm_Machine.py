@@ -58,12 +58,30 @@ while True:
                 print("Insufficient funds!")
                 continue  
     
-        break  
+            break  
+        balance -= amount
+        print("Withdrawal successful! Your new balance is:", balance)
     
     elif option == "3":
-        amount = int(input("Enter amount to deposit: "))
+        while True:
+            amount = input("Enter amount: ")
+    
+            if not amount.isdigit():
+                print("Numbers only!")
+                continue 
+    
+            amount = int(amount)
+    
+            if amount <= 0:
+                print("Must be greater than zero!")
+                continue
+    
+            if amount > balance:
+                print("Insufficient funds!")
+                continue 
+            break
         balance += amount
-        print("Deposit successful! New balance:", balance)
+        print("Deposit successful! Your new balance is:", balance)
     
     elif option == "4":
         print("Thank you for using our ATM. Goodbye!")

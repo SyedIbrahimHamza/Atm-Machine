@@ -41,12 +41,24 @@ while True:
         print("Your balance is:", balance)
     
     elif option == "2":
-        amount = int(input("Enter amount to withdraw: "))
-        if amount > balance:
-            print("Insufficient balance!")
-        else:
-            balance -= amount
-            print("Withdrawal successful! New balance:", balance)
+        while True:
+            amount = input("Enter amount: ")
+    
+            if not amount.isdigit():
+                print("Numbers only!")
+                continue  
+    
+            amount = int(amount)
+    
+            if amount <= 0:
+                print("Must be greater than zero!")
+                continue
+    
+            if amount > balance:
+                print("Insufficient funds!")
+                continue  
+    
+        break  
     
     elif option == "3":
         amount = int(input("Enter amount to deposit: "))
